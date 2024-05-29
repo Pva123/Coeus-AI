@@ -24,7 +24,7 @@ Coeus AI's sleek and intuitive desktop interface makes productivity effortless. 
 ### Advanced Data Processing with SQL
 Under the hood, Coeus AI utilizes the power of SQL for lightning-fast data processing and management. Your personal data is securely stored and intelligently analyzed to generate meaningful insights and recommendations that empower you to reach your goals.
 
-## Getting Started
+## Getting Started (not ready yet)
 
 To embark on your productivity journey with Coeus AI, follow these simple steps:
 
