@@ -1,4 +1,4 @@
-import tkinter as tk #Parsa is iranian!!!
+import tkinter as tk 
 from tkinter import ttk
 
 class CoeusAIApp:
