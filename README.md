@@ -41,4 +41,4 @@ Coeus AI is more than just a productivity tool – it's a revolution in personal
 
 ## License
 
-Coeus AI is a proprietary project developed by Parsa Vafaei and Mahyar Mahdavi. All rights reserved.
+Coeus AI is a proprietary project developed by Parsa Vafaei, Mahyar Mahdavi and Henrique Miranda. All rights reserved.
