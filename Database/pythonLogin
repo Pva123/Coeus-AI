@@ -1,0 +1,65 @@
+import sqlite3
+import hashlib
+
+def initialize_db():
+    conn = sqlite3.connect('user_auth.db')
+    cursor = conn.cursor()
+    cursor.execute('''CREATE TABLE IF NOT EXISTS users (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        username TEXT NOT NULL UNIQUE,
+                        password TEXT NOT NULL)''')
+    conn.commit()
+    conn.close()
+
+initialize_db()
+
+def hash_password(password):
+    return hashlib.sha256(password.encode()).hexdigest()
+
+def register_user(username, password):
+    conn = sqlite3.connect('user_auth.db')
+    cursor = conn.cursor()
+    try:
+        cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, hash_password(password)))
+        conn.commit()
+        print("User registered successfully!")
+    except sqlite3.IntegrityError:
+        print("Username already exists!")
+    finally:
+        conn.close()
+
+def login_user(username, password):
+    conn = sqlite3.connect('user_auth.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT password FROM users WHERE username=?", (username,))
+    record = cursor.fetchone()
+    conn.close()
+    
+    if record and record[0] == hash_password(password):
+        print("Login successful!")
+    else:
+        print("Invalid username or password.")
+
+def main():
+    while True:
+        print("1. Register")
+        print("2. Login")
+        print("3. Exit")
+        choice = input("Enter choice: ")
+
+        if choice == '1':
+            username = input("Enter username: ")
+            password = input("Enter password: ")
+            register_user(username, password)
+        elif choice == '2':
+            username = input("Enter username: ")
+            password = input("Enter password: ")
+            login_user(username, password)
+        elif choice == '3':
+            print("Exiting...")
+            break
+        else:
+            print("Invalid choice! Please try again.")
+
+if __name__ == "__main__":
+    main()
