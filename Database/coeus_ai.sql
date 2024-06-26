@@ -1,4 +1,5 @@
 CREATE DATABASE CoeusAI;
+-- Database Schema
 
 -- Switch to the CoeusAI database
 USE CoeusAI;
