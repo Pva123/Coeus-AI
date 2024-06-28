@@ -1,4 +1,3 @@
-@ -1,43 +0,0 @@
 # Coeus AI - Your Personal Productivity Companion
 
 Welcome to Coeus AI (Customized Self-Assistant Intelligence), your ultimate productivity companion! Coeus AI isn't just another task manager or calendar app – it's a smart, intuitive assistant that understands you better than anyone else.
